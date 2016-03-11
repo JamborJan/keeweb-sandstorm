@@ -26,6 +26,12 @@ rm -rf /opt/app/keeweb/app/resources
 mkdir /opt/app/keeweb/app/resources
 cp /opt/app/.sandstorm/Demo.kdbx /opt/app/keeweb/app/resources
 
+# We do some Sandstorm related changes
+# as we are connecting inside the grain via 127.0.0.1 we cannot https
+sed --in-place='' \
+        --expression '27s/.*/    if ( 0 === 1) {/' \
+        /opt/app/keeweb/app/scripts/app.js
+
 # Go to app directory
 cd /opt/app/keeweb/
 
