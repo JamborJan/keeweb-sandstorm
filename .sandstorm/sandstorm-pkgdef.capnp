@@ -48,10 +48,10 @@ const pkgdef :Spk.PackageDefinition = (
       # https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/package.capnp
       icons = (
         # Various icons to represent the app in various contexts.
-        #appGrid = (svg = embed "path/to/appgrid-128x128.svg"),
-        #grain = (svg = embed "path/to/grain-24x24.svg"),
-        #market = (svg = embed "path/to/market-150x150.svg"),
-        #marketBig = (svg = embed "path/to/market-big-300x300.svg"),
+        appGrid = (png = (dpi1x = embed "app-graphics/appgrid-128x128.png")),
+        grain = (png = (dpi1x = embed "app-graphics/grain-24x24.png")),
+        market = (png = (dpi1x = embed "app-graphics/market-150x150.png")),
+        marketBig = (png = (dpi1x = embed "app-graphics/market-big-300x300.png")),
       ),
 
       website = "http://example.com",
