@@ -50,7 +50,8 @@ cd /opt/app/
 rm -rf /opt/app/keeweb
 # Clone git repository
 git clone https://github.com/antelle/keeweb
-
+cd /opt/app/keeweb
+git checkout develop
 
 # By default, this script does nothing.  You'll have to modify it as
 # appropriate for your application.
