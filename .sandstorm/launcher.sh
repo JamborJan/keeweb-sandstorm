@@ -36,10 +36,8 @@ mkdir -p /var/log/nginx
 rm -rf /var/run
 mkdir -p /var/run
 
-# create resources folder to writable /var/folder
-mkdir -p /var/resources
-# Copy demo data
-cp /opt/app/.sandstorm/Demo.kdbx /var/resources
+# create storage folder in writable /var folder
+#mkdir -p /var/storage
 
 # Cleanup log files
 FILES="$(find /var/log -name '*.log')"
