@@ -49,6 +49,34 @@ git clone https://github.com/keeweb/keeweb.git
 cd /opt/app/keeweb
 git checkout gh-pages
 
+# patch keeweb conf
+# sed doesnt do the job properly here yet
+sed --in-place='' \
+        --expression 's/^<meta name="kw-config" content="(no-config)">/<meta name="kw-config" content="config.json">/g' \
+        /opt/app/keeweb/index.html
+
+# Write Sandstorm specific config file
+cat > /opt/app/keeweb/config.json <<EOF
+{
+    "skipHttpsWarning": true,
+    "canOpen": false,
+    "canOpenDemo": false,
+    "canOpenSettings": false,
+    "canCreate": false,
+    "canImportXml": false,
+    "dropbox": false,
+    "webdav": false,
+    "gdrive": false,
+    "onedrive": false,
+    "files": [{
+        "storage": "webdav",
+        "name": "My file",
+        "path": "webdav-url",
+        "options": { "user": "", "password": "" }
+    }]
+}
+EOF
+
 # By default, this script does nothing.  You'll have to modify it as
 # appropriate for your application.
 exit 0
