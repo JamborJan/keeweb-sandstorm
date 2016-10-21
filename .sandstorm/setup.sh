@@ -4,13 +4,9 @@
 # - https://docs.sandstorm.io/en/latest/vagrant-spk/customizing/#setupsh
 
 set -euo pipefail
-# This is the ideal place to do things like:
-#
 export DEBIAN_FRONTEND=noninteractive
-# Add latest nodejs sources
-curl -sL https://deb.nodesource.com/setup_5.x | bash -
-# Install required packages
-apt-get install -y nginx git curl nodejs
+apt-get update
+apt-get install -y nginx git curl
 
 # Setup nginx config
 cat > /etc/nginx/sites-available/default <<EOF
@@ -25,7 +21,7 @@ server {
     # WebSession due to https://github.com/sandstorm-io/sandstorm/issues/289
     gzip off;
     server_name localhost;
-    root /opt/app/keeweb/tmp/;
+    root /opt/app/keeweb/;
     location / {
         index index.html;
         # try_files \$uri \$uri/ =404;
@@ -49,10 +45,9 @@ cd /opt/app/
 # Purge git repository just in case it is there
 rm -rf /opt/app/keeweb
 # Clone git repository
-git clone https://github.com/antelle/keeweb
+git clone https://github.com/keeweb/keeweb.git
 cd /opt/app/keeweb
-# for testing the developer branch
-git checkout develop
+git checkout gh-pages
 
 # By default, this script does nothing.  You'll have to modify it as
 # appropriate for your application.
