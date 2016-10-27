@@ -60,11 +60,14 @@ lib64/ld-linux-x86-64.so.2
 opt/app/.sandstorm/launcher.sh
 opt/app/keeweb/config.json
 opt/app/keeweb/index.html
+opt/app/keeweb/manifest.appcache
 proc/cpuinfo
 sandstorm-http-bridge
 sandstorm-http-bridge-config
 sandstorm-manifest
 usr/bin/find
+usr/bin/tail
+usr/bin/tee
 usr/lib/ssl/openssl.cnf
 usr/lib/x86_64-linux-gnu/libGeoIP.so.1
 usr/lib/x86_64-linux-gnu/libGeoIP.so.1.6.2
