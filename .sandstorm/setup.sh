@@ -52,28 +52,24 @@ git checkout gh-pages
 # patch keeweb conf
 # sed doesnt do the job properly here yet
 sed --in-place='' \
-        --expression 's/^<meta name="kw-config" content="(no-config)">/<meta name="kw-config" content="config.json">/g' \
+        --expression 's/<meta name="kw-config" content="(no-config)">/<meta name="kw-config" content="config.json">/' \
         /opt/app/keeweb/index.html
 
 # Write Sandstorm specific config file
 cat > /opt/app/keeweb/config.json <<EOF
 {
+  "settings": {
     "skipHttpsWarning": true,
-    "canOpen": false,
+    "canOpen": true,
     "canOpenDemo": false,
     "canOpenSettings": false,
-    "canCreate": false,
+    "canCreate": true,
     "canImportXml": false,
     "dropbox": false,
     "webdav": false,
     "gdrive": false,
-    "onedrive": false,
-    "files": [{
-        "storage": "webdav",
-        "name": "My file",
-        "path": "webdav-url",
-        "options": { "user": "", "password": "" }
-    }]
+    "onedrive": false
+  }
 }
 EOF
 
