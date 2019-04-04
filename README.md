@@ -1,3 +1,7 @@
+This project is dormant ([reasons](https://gist.github.com/JamborJan/8e42eff813b6fb0b6fe987afb9241c5e)). 
+
+Issues have been closed as there will be no further progress on them. Feel free to fork the repo and take over maintenance.
+
 Keeweb App for Sandstorm
 ========================
 This is the [Sandstorm](https://sandstorm.io) package of the [KeePass web app (unofficial)](https://keeweb.info) which has been build by [antelle](https://github.com/antelle).
